@@ -7,7 +7,7 @@ import pandas
 from pandas import DataFrame, Series
 import math
 # 
-data = pandas.read_csv("C://Users//Administrator//Desktop//workbook3//sus.csv")
+data = pandas.read_csv("C://Users//Administrator//Desktop//basketball//basketball.csv")
 # print(len(data))
 df = DataFrame(data)
 means = []
@@ -22,7 +22,7 @@ df1 = df.drop(['user_id','elo','number'], axis=1)
 for j in range(0, df1.shape[0]):
     columnCount = 0;
     rowData = [];
-    for i in range(2, df1.shape[1]):
+    for i in range(0, df1.shape[1]):
         column = df1.ix[[j]].values[0][i]
         if  not math.isnan(column):
 #                     sum=sum +column;
@@ -66,15 +66,15 @@ data["means"] = means;
 data["std"] = std;
 data["min"] = min;
 data["max"] = max;
-df.to_csv("C://Users//Administrator//Desktop//workbook3//suscopy0.4.csv")
+df.to_csv("C://Users//Administrator//Desktop//basketball//basketball0.4.csv")
 
 # df1 = df.drop(['index','user_id','elo','number'], axis=1)
 # for j in range(0, df1.shape[0]):
 #     print(df1.mean(j))
-#     means.append(df1.mean(j)) 
+#     means.append(df1.mean(j))
 # df1["means"] = means
-# print(df1)    
-      
+# print(df1)
+
 #字典中的key值即为csv中列名
 # dataframe = data.DataFrame({'a_name':data["user_id"]/100})
 # 
